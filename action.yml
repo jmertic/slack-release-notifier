@@ -22,14 +22,17 @@ inputs:
     required: true
     description: Project logo
   release_version:
-    required: true
+    required: false
     description: Release Version
+    default: ${{ github.event.release.name }}
   release_url:
-    required: true
+    required: false
     description: Release URL
+    default: ${{ github.event.release.html_url }}
   release_notes:
-    required: true
+    required: false
     description: Release Notes
+    default: ${{ github.event.release.body }}
 
 outputs:
   phrase:
