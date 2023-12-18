@@ -22,7 +22,9 @@ jobs:
       with:
         # Project Name
         project_name: "My Project"
-        # Slack Bot Token; follow instructions to get one at https://api.slack.com/tutorials/tracks/getting-a-token with scopes 'channels:read' and 'chat:write'
+        # Slack Bot Token; follow instructions to get one at
+        # https://api.slack.com/tutorials/tracks/getting-a-token
+        # with scopes 'channels:read' and 'chat:write'
         slack_bot_token: ${{ secrets.SLACK_BOT_TOKEN }}
         # Slack Channel to post to
         slack_channel: "#release-announcements"
