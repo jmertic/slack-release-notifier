@@ -71,7 +71,7 @@ def main(args: List[str]) -> None:
 
     try:
         response = client.chat_postMessage(
-            channel=os.environ['SLACK_CHANNEL'], 
+            channel=os.environ['INPUT_SLACK_CHANNEL'], 
             attachments=json.dumps(attachments), 
             blocks=json.dumps(blocks), 
             text=release_name, 
