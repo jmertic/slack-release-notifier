@@ -1,0 +1,36 @@
+name: Slack Release Notifier
+description: Provides rich notifications to a specific Slack channel for releases
+author: John Mertic
+
+branding:
+  icon: check
+  color: blue
+
+runs:
+  using: docker
+  image: Dockerfile
+
+inputs:
+  project_name:
+    required: false
+    description: Project Name
+    default: My Project
+  slack_bot_token:
+    required: true
+    description: Slack Bot Token
+  project_logo:
+    required: true
+    description: Project logo
+  release_version:
+    required: true
+    description: Release Version
+  release_url:
+    required: true
+    description: Release URL
+  release_notes:
+    required: true
+    description: Release Notes
+
+outputs:
+  phrase:
+    description: output variable
