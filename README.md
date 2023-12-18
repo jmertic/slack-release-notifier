@@ -27,6 +27,6 @@ jobs:
         # Slack Channel to post to
         slack_channel: "#release-announcements"
         # Project Logo
-        project_logo: "https://artwork.aswf.io/other/aswf/text/aqua/aswf-text-aqua.png"
+        project_logo: "URL TO PROJECT LOGO"
       uses: jmertic/slack-release-notifier@main
 ```
