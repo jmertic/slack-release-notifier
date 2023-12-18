@@ -86,12 +86,5 @@ def main(args: List[str]) -> None:
         assert isinstance(e.response.status_code, int)
         print(f"Received a response status_code: {e.response.status_code}")
 
-
-
 if __name__ == "__main__":
     main(sys.argv[1:])
-
-
-
-
-
