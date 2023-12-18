@@ -4,7 +4,7 @@ Provides rich notifications to a specific Slack channel for releases
 
 ### Usage
 ```yml
-name: Publish Release Notice to ASWF Slack
+name: Publish Release Notice to Slack
 
 on:
   release:
