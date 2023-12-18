@@ -1,11 +1,32 @@
-## Slack Release Notifier <img alt="action-badge" src="https://img.shields.io/badge/Slack Release Notifier-white?logo=github-actions&label=GitHub%20Action&labelColor=white&color=0064D7"> <a href="https://github.com/lnxpy/cookiecutter-pyaction"><img alt="cookiecutter-pyaction" src="https://img.shields.io/badge/cookiecutter--pyaction-white?logo=cookiecutter&label=Made%20with&labelColor=white&color=0064D7"></a>
+# Slack Release Notifier 
 
 Provides rich notifications to a specific Slack channel for releases
 
 ### Usage
 ```yml
-example usage..
-```
+name: Publish Release Notice to ASWF Slack
 
-### License
-This action is licensed under some specific terms. Check [here](LICENSE) for more information.
+on:
+  release:
+    types:
+      - released
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+    - name: Notify Slack
+      id: slack
+      with:
+        # Project Name
+        project_name: "My Project"
+        # Slack Bot Token; follow instructions to get one at https://api.slack.com/tutorials/tracks/getting-a-token with scopes 'channels:read' and 'chat:write'
+        slack_bot_token: ${{ secrets.SLACK_BOT_TOKEN }}
+        # Slack Channel to post to
+        slack_channel: "#release-announcements"
+        # Project Logo
+        project_logo: "https://artwork.aswf.io/other/aswf/text/aqua/aswf-text-aqua.png"
+      uses: jmertic/slack-release-notifier@main
+```
