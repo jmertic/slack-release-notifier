@@ -18,6 +18,9 @@ inputs:
   slack_bot_token:
     required: true
     description: Slack Bot Token
+  slack_channel:
+    required: true
+    description: Slack channel to send the announcement to
   project_logo:
     required: true
     description: Project logo
