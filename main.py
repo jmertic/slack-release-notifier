@@ -69,6 +69,10 @@ def main(args: List[str]) -> None:
         }
     ]
 
+    channel = os.environ['INPUT_SLACK_CHANNEL']
+    if not channel.startswith("#"):
+        channel = f"#{channel}"
+
     try:
         response = client.chat_postMessage(
             channel=os.environ['INPUT_SLACK_CHANNEL'], 

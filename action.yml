@@ -20,7 +20,8 @@ inputs:
     description: Slack Bot Token
   slack_channel:
     required: false
-    description: "#release-announcements"
+    description: Slack channel to send the announcement to
+    default: "#release-announcements"
   project_logo:
     required: true
     description: Project logo
