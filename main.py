@@ -62,14 +62,12 @@ def main(args: List[str]) -> None:
                     "type": "section",
                     "text": {
                         "type": "mrkdwn",
-                        "text": release_notes
+                        "text": release_notes[0:3000]
                     }
                 }
             ]
         }
     ]
-
-    print(json.dumps(attachments))
 
     try:
         response = client.chat_postMessage(
