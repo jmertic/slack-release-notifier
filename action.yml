@@ -18,6 +18,9 @@ inputs:
   slack_bot_token:
     required: true
     description: Slack Bot Token
+  slack_channel:
+    required: false
+    description: "#release-announcements"
   project_logo:
     required: true
     description: Project logo
