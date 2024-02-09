@@ -14,28 +14,29 @@ inputs:
   project_name:
     required: false
     description: Project Name
-    default: My Project
+    default: "My Project"
   slack_bot_token:
     required: true
     description: Slack Bot Token
   slack_channel:
-    required: true
+    required: false
     description: Slack channel to send the announcement to
+    default: "#release-announcements"
   project_logo:
     required: true
     description: Project logo
   release_version:
     required: false
     description: Release Version
-    default: ${{ github.event.release.name }}
+    default: "${{ github.event.release.name }}"
   release_url:
     required: false
     description: Release URL
-    default: ${{ github.event.release.html_url }}
+    default: "${{ github.event.release.html_url }}"
   release_notes:
     required: false
     description: Release Notes
-    default: ${{ github.event.release.body }}
+    default: "${{ github.event.release.body }}"
 
 outputs:
   phrase:

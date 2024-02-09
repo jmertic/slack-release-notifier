@@ -4,7 +4,7 @@ from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
 import sys
 from typing import List
-from actions import io
+#from actions import io
 
 
 def main(args: List[str]) -> None:
@@ -62,7 +62,7 @@ def main(args: List[str]) -> None:
                     "type": "section",
                     "text": {
                         "type": "mrkdwn",
-                        "text": release_notes
+                        "text": release_notes[0:3000]
                     }
                 }
             ]
