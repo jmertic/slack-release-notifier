@@ -69,6 +69,8 @@ def main(args: List[str]) -> None:
         }
     ]
 
+    print(json.dumps(attachments))
+
     try:
         response = client.chat_postMessage(
             channel=os.environ['INPUT_SLACK_CHANNEL'], 
