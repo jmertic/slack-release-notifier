@@ -1,5 +1,5 @@
 # setting the base-image to alpine
-FROM python:3-slim@sha256:5b3879b6f3cb77e712644d50262d05a7c146b7312d784a18eff7ff5462e77033
+FROM python:3-slim@sha256:7a500125bc50693f2214e842a621440a1b1b9cbb2188f74ab045d29ed2ea5856
 
 # importing the action
 COPY . /action
