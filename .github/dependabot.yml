@@ -4,6 +4,9 @@ updates:
     directory: /
     schedule:
       interval: weekly
+    groups:
+      all:
+        dependency-type: "production"
   - package-ecosystem: github-actions # See documentation for possible values
     directory: "/" # Location of package manifests
     schedule:
@@ -15,3 +18,6 @@ updates:
     directory: /
     schedule:
       interval: weekly
+    groups:
+      all:
+        dependency-type: "production"
