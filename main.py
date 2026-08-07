@@ -1,10 +1,21 @@
 import os
 import json
+from slackify_markdown import slackify_markdown
 from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
 import sys
 from typing import List
 #from actions import io
+
+
+SLACK_SECTION_TEXT_LIMIT = 3000
+
+
+def format_release_notes(release_notes: str) -> str:
+    """Convert Markdown to Slack mrkdwn and enforce the section limit."""
+
+    formatted_notes = slackify_markdown(release_notes).rstrip("\n")
+    return formatted_notes[:SLACK_SECTION_TEXT_LIMIT]
 
 
 def main(args: List[str]) -> None:
@@ -62,7 +73,7 @@ def main(args: List[str]) -> None:
                     "type": "section",
                     "text": {
                         "type": "mrkdwn",
-                        "text": release_notes[0:3000]
+                        "text": format_release_notes(release_notes)
                     }
                 }
             ]
