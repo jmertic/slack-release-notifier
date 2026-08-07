@@ -1,0 +1,6 @@
+# Generated for pip and poetry hash pinning
+pip==26.2.1 \
+    --hash=sha256:889417efc862953258dbd98d2f1f4502d9a6c9d2ef89d81373574d6428c8d8b9
+
+poetry==2.4.1 \
+    --hash=sha256:d9b23ed95689ef7a35639ba3978fb6e7b7dbd76e4c7b81bf8bf1584c208477ec
