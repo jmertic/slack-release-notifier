@@ -87,7 +87,7 @@ class TestSlackReleaseNotifier(unittest.TestCase):
         error = SlackApiError("Auth Error", response=mock_slack_response)
         mock_client.chat_postMessage.side_effect = error
 
-        main([])
+        main()
 
         mock_client.chat_postMessage.assert_called_once()
 
