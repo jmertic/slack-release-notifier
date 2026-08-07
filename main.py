@@ -22,18 +22,9 @@ def format_release_notes(release_notes: str) -> str:
     return formatted_notes[:SLACK_SECTION_TEXT_LIMIT]
 
 
-def main(args: List[str]) -> None:
+def main() -> None:
     """main function
-
-    Args:
-        args: STDIN arguments
     """
-
-    # now you can access the inputs like:
-    #    f"Hello {os.environ["INPUT_NAME"]}"
-
-    # you can write to output like:
-    #   io.write_to_output({var: val, ...})
 
     project = os.environ['INPUT_PROJECT_NAME']
     client = WebClient(token=os.environ['INPUT_SLACK_BOT_TOKEN'])

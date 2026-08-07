@@ -51,7 +51,7 @@ class TestSlackReleaseNotifier(unittest.TestCase):
             "message": {"text": "MyProject v1.0.0"}
         }
 
-        main([])
+        main()
 
         mock_web_client_class.assert_called_once_with(token="xoxb-test-token")
         mock_client.chat_postMessage.assert_called_once()
