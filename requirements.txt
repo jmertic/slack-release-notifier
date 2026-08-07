@@ -1,2 +1,0 @@
-slack_sdk>=3.43.0
-slackify-markdown>=0.2.4,<0.3

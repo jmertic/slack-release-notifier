@@ -1,4 +1,9 @@
-# Slack Release Notifier 
+# Slack Release Notifier
+
+[![License](https://img.shields.io/github/license/jmertic/slack-release-notifier)](LICENSE)
+[![CI](https://github.com/jmertic/slack-release-notifier/workflows/CI/badge.svg)](https://github.com/jmertic/slack-release-notifier/actions?query=workflow%3ACI+branch%3Amain)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=jmertic_slack-release-notifier&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=jmertic_slack-release-notifier)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=jmertic_slack-release-notifier&metric=coverage)](https://sonarcloud.io/summary/new_code?id=jmertic_slack-release-notifier)
 
 Provides rich notifications to a specific Slack channel for releases
 

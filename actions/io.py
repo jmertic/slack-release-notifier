@@ -1,8 +1,14 @@
+#!/usr/bin/env python3
+#
+# Copyright this project and it's contributors
+# SPDX-License-Identifier: Apache-2.0
+#
+# encoding=utf8
+
 import os
 from typing import Dict
 
 BUFFER_PATH = os.environ["GITHUB_OUTPUT"]
-
 
 def write_to_output(context: Dict[str, str]) -> None:
     """writes the keys (as variables) and values (as values) to the output buffer

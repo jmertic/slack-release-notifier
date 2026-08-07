@@ -1,3 +1,10 @@
+#!/usr/bin/env python3
+#
+# Copyright this project and it's contributors
+# SPDX-License-Identifier: Apache-2.0
+#
+# encoding=utf8
+
 import os
 import json
 from slackify_markdown import slackify_markdown
@@ -5,11 +12,8 @@ from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
 import sys
 from typing import List
-#from actions import io
-
 
 SLACK_SECTION_TEXT_LIMIT = 3000
-
 
 def format_release_notes(release_notes: str) -> str:
     """Convert Markdown to Slack mrkdwn and enforce the section limit."""
@@ -86,10 +90,10 @@ def main(args: List[str]) -> None:
 
     try:
         response = client.chat_postMessage(
-            channel=os.environ['INPUT_SLACK_CHANNEL'], 
-            attachments=json.dumps(attachments), 
-            blocks=json.dumps(blocks), 
-            text=release_name, 
+            channel=os.environ['INPUT_SLACK_CHANNEL'],
+            attachments=json.dumps(attachments),
+            blocks=json.dumps(blocks),
+            text=release_name,
             icon_url=logo
         )
         assert response["message"]["text"] == release_name
@@ -100,6 +104,3 @@ def main(args: List[str]) -> None:
         # Also receive a corresponding status_code
         assert isinstance(e.response.status_code, int)
         print(f"Received a response status_code: {e.response.status_code}")
-
-if __name__ == "__main__":
-    main(sys.argv[1:])
