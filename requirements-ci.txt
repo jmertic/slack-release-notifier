@@ -555,17 +555,17 @@ packaging==26.3 \
     #   build
     #   findpython
     #   poetry
-pbs-installer==2026.8.5 \
-    --hash=sha256:32e267e3358cd89e1bfeb28d1978a576369e7cf61d4067c403e70bf43f1fdcf8 \
-    --hash=sha256:849d03259dc6dbf4d1dc3c392313371ae491da99d2186acfd5edd24abacd2eba
+pbs-installer==2026.8.7 \
+    --hash=sha256:1c443694c0e3dc6a672411c1183b72172bf364f4480e96a609d944de6c5e9afe \
+    --hash=sha256:cebce1b95dd5c3cb1336bba3625476d4b246ce4b10eccedff3cc3cb31f322956
     # via poetry
 pkginfo==1.12.1.2 \
     --hash=sha256:5cd957824ac36f140260964eba3c6be6442a8359b8c48f4adf90210f33a04b7b \
     --hash=sha256:c783ac885519cab2c34927ccfa6bf64b5a704d7c69afaea583dd9b7afe969343
     # via poetry
-platformdirs==4.11.0 \
-    --hash=sha256:0555d18370482847566ffabcaa53ad7c6c1c29f195989ae1ed634a05f76ea1e0 \
-    --hash=sha256:360ccded2b7fce0af0ff80cc8f5942a1c5d99b0e856033acb030bfc634709e74
+platformdirs==4.11.2 \
+    --hash=sha256:3a2ae5fca3520a01ab1be8b45613537f52ddf5b5f6f53d88233892dfbf0cd82d \
+    --hash=sha256:7f89089b6ea71bda7962953edcf784b2e2d9d285b40ad88be2bb75c6e9d82ab4
     # via
     #   findpython
     #   poetry
@@ -573,9 +573,9 @@ platformdirs==4.11.0 \
 poetry==2.4.1 \
     --hash=sha256:a91f13279a3c9add0d12c5ca5c7cb173622930a5c8272fee68c751cb5c72f951 \
     --hash=sha256:2296d3f25c2ce3855a0f6a2a0ff9e28f322791f1530e461b402e1c9e830e238f
-poetry-core==2.4.0 \
-    --hash=sha256:4305848477da00272bebd3f615bbec87f64bd117cdb858ab660b626a06a9d96c \
-    --hash=sha256:4e8c7496cf797998ffc493f2e23eba4b038c894c08eadacdcdf688945de6b43a
+poetry-core==2.4.1 \
+    --hash=sha256:89dceb6c10e9c6d8650a16183400e3c9ff9ddee13b0a81023b5575334a2b3744 \
+    --hash=sha256:acf06f9537cd2625bdaec926d95d90b557ba15353bc71d27a3a8a441042b5316
     # via poetry
 pycparser==3.0 ; (implementation_name != 'PyPy' and platform_python_implementation != 'PyPy' and sys_platform == 'linux') or (implementation_name != 'PyPy' and sys_platform == 'darwin') \
     --hash=sha256:600f49d217304a5902ac3c37e1281c9fe94e4d0489de643a9504c5cdfdfc6b29 \
@@ -713,9 +713,9 @@ urllib3==2.7.0 \
     # via
     #   dulwich
     #   requests
-virtualenv==21.7.1 \
-    --hash=sha256:6394973f990536e34c05157179146c020284c42fe01da1dfeb0ba16c345280d9 \
-    --hash=sha256:d0dbfaa5483487baea28d7210ef8d24c9d1bd0f10f449eeb215568825a9b334e
+virtualenv==21.7.4 \
+    --hash=sha256:376ec93cd6aab3044fa395d7db226db38043b7b5748948044b2a87168525e843 \
+    --hash=sha256:c9d960c95fa458171e58222a5ccab7465298e4b6559977865e627c4719f1e825
     # via poetry
 xattr==1.3.0 ; sys_platform == 'darwin' \
     --hash=sha256:03712f84e056dcd23c36db03a1f45417a26eef2c73d47c2c7d425bf932601587 \
