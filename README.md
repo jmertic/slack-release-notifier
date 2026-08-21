@@ -14,6 +14,8 @@ name: Publish Release Notice to Slack
 on:
   release:
     types:
+      # You can add `prereleased` and/or `published` to trigger for release candidates and other release types
+      # See https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#release
       - released
 
 jobs:
