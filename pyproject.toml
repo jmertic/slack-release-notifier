@@ -9,7 +9,7 @@ license = "Apache 2"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "slack-sdk (>=3.43.0)",
+    "slack-sdk (>=3.44.1)",
     "slackify-markdown (>=0.2.4,<0.3)"
 ]
 
