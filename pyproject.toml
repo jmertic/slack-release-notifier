@@ -22,7 +22,7 @@ build-backend = "poetry.core.masonry.api"
 
 [dependency-groups]
 test = [
-    "coverage (>=7.15.4,<8.0.0)"
+    "coverage (>=7.16.0,<8.0.0)"
 ]
 
 [tool.coverage.run]
