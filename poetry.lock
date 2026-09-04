@@ -203,4 +203,4 @@ markdown-it-py = ">=3.0.0"
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.13"
-content-hash = "00a6b51f069ab2e2557d634cc9050c48efcc6254a0a59891e8a2a16cddf1e3f9"
+content-hash = "874158f8e5fca8a95796e9e24c72288a199c0f4933e5f2d857f7aa3b91bd343b"
