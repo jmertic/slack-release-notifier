@@ -21,3 +21,6 @@ updates:
     groups:
       all:
         dependency-type: "production"
+    ignore:
+      - dependency-name: "poetry-core"
+        versions: ["2.4.1"]
