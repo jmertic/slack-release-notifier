@@ -22,5 +22,5 @@ updates:
       all:
         dependency-type: "production"
     ignore:
-      - dependency-name: "poetry-core"
-        versions: ["2.4.1"]
+      - dependency-name: "filelock"
+        versions: [">= 4.0.0"]
