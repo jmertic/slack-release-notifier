@@ -9,10 +9,20 @@ import os
 import unittest
 from unittest.mock import MagicMock, patch
 from slack_sdk.errors import SlackApiError
-
+import logging
 from main import SLACK_SECTION_TEXT_LIMIT, format_release_notes, main
 
 class TestSlackReleaseNotifier(unittest.TestCase):
+
+    @classmethod
+    def setUpClass(cls):
+        # Silence all loggers during test suite execution
+        logging.disable(logging.CRITICAL)
+
+    @classmethod
+    def tearDownClass(cls):
+        # Re-enable standard logging after tests complete
+        logging.disable(logging.NOTSET)
 
     def test_format_release_notes_within_limit(self):
         """Test formatting markdown within character limit."""
@@ -87,7 +97,11 @@ class TestSlackReleaseNotifier(unittest.TestCase):
         error = SlackApiError("Auth Error", response=mock_slack_response)
         mock_client.chat_postMessage.side_effect = error
 
-        main()
+        with self.assertRaises(SystemExit) as cm:
+            main()
+
+        # Assert exit code is 1
+        self.assertEqual(cm.exception.code, 1)
 
         mock_client.chat_postMessage.assert_called_once()
 
@@ -147,10 +161,11 @@ class FormatReleaseNotesTests(unittest.TestCase):
     def test_enforces_slack_section_text_limit_after_conversion(self):
         release_notes = "[link](https://example.com) " + ("x" * 3000)
 
-        formatted_notes = format_release_notes(release_notes)
+        with self.assertLogs(level=logging.WARNING):
+            formatted_notes = format_release_notes(release_notes)
 
-        self.assertEqual(len(formatted_notes), 3000)
-        self.assertTrue(formatted_notes.startswith("<https://example.com|link>"))
+            self.assertEqual(len(formatted_notes), 3000)
+            self.assertTrue(formatted_notes.startswith("<https://example.com|link>"))
 
 
 if __name__ == "__main__":
