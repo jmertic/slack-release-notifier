@@ -1,6 +1,6 @@
 [project]
 name = "slack-release-notifier"
-version = "20260820"
+version = "20260930"
 description = ""
 authors = [
     {name = "John Mertic"}
