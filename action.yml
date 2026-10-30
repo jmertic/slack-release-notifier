@@ -1,43 +1,68 @@
-name: Slack Release Notifier
-description: Provides rich notifications to a specific Slack channel for releases
-author: John Mertic
-
+name: 'Slack Release Notifier'
+description: 'Posts GitHub releases to Slack channels'
+author: 'John Mertic'
 branding:
-  icon: check
-  color: blue
-
-runs:
-  using: docker
-  image: Dockerfile
+  icon: 'message-square'
+  color: 'yellow'
 
 inputs:
-  project_name:
-    required: false
-    description: Project Name
-    default: "My Project"
   slack_bot_token:
+    description: 'Slack Bot User OAuth Token (xoxb-...)'
     required: true
-    description: Slack Bot Token
   slack_channel:
-    required: false
-    description: Slack channel to send the announcement to
-    default: "#release-announcements"
-  project_logo:
+    description: 'Slack channel ID or name to post to'
     required: true
-    description: Project logo
-  release_version:
+  github_token:
+    description: 'GitHub token for API access'
+    required: true
+  github_repository:
+    description: 'Repository name (e.g. owner/repo). Defaults to current repository.'
     required: false
-    description: Release Version
-    default: "${{ github.event.release.name }}"
-  release_url:
+    default: ${{ github.repository }}
+  include_pre_releases:
+    description: 'Whether to include pre-releases'
     required: false
-    description: Release URL
-    default: "${{ github.event.release.html_url }}"
-  release_notes:
+    default: 'false'
+  include_drafts:
+    description: 'Whether to include draft releases'
     required: false
-    description: Release Notes
-    default: "${{ github.event.release.body }}"
+    default: 'false'
+  release_tag:
+    description: 'Specific release tag to notify for (optional)'
+    required: false
+    default: ''
+  custom_message:
+    description: 'Custom text/header to prepend to the Slack message (optional)'
+    required: false
+    default: ''
 
-outputs:
-  phrase:
-    description: output variable
+runs:
+  using: 'composite'
+  steps:
+    - name: Set up Python
+      uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+      with:
+        python-version-file: '${{ github.action_path }}/.python-version'
+        cache: 'poetry'
+        cache-dependency-path: '${{ github.action_path }}/poetry.lock'
+
+    - name: Install poetry
+      uses: abatilo/actions-poetry@3765cf608f2d4a72178a9fc5b918668e542b89b1 # v4.0.0
+
+    - name: Install Dependencies
+      shell: bash
+      working-directory: ${{ github.action_path }}
+      run: poetry install --no-root --only main --no-interaction --no-ansi
+
+    - name: Run Notifier Script
+      shell: bash
+      working-directory: ${{ github.action_path }}
+      run: >
+        poetry run python main.py
+        --slack-bot-token "${{ inputs.slack_bot_token }}"
+        --slack-channel "${{ inputs.slack_channel }}"
+        --project-name "${{ inputs.project_name }}"
+        --project-logo "${{ inputs.project_logo }}"
+        --release-version "${{ inputs.release_version }}"
+        --release-url "${{ inputs.release_url }}"
+        --release-notes "${{ inputs.release_notes }}"

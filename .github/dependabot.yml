@@ -1,12 +1,5 @@
 version: 2
 updates:
-  - package-ecosystem: docker
-    directory: /
-    schedule:
-      interval: weekly
-    groups:
-      all:
-        dependency-type: "production"
   - package-ecosystem: github-actions # See documentation for possible values
     directory: "/" # Location of package manifests
     schedule:
@@ -21,6 +14,3 @@ updates:
     groups:
       all:
         dependency-type: "production"
-    ignore:
-      - dependency-name: "filelock"
-        versions: [">= 4.0.0"]
