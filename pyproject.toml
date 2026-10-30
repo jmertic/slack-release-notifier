@@ -1,6 +1,6 @@
 [project]
 name = "slack-release-notifier"
-version = "20260820"
+version = "20260930"
 description = ""
 authors = [
     {name = "John Mertic"}
@@ -9,7 +9,7 @@ license = "Apache 2"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "slack-sdk (>=3.44.1)",
+    "slack-sdk (>=3.45.0)",
     "slackify-markdown (>=0.2.4,<0.3)"
 ]
 
@@ -22,7 +22,7 @@ build-backend = "poetry.core.masonry.api"
 
 [dependency-groups]
 test = [
-    "coverage (>=7.16.1,<8.0.0)"
+    "coverage (>=7.17.0,<8.0.0)"
 ]
 
 [tool.coverage.run]
