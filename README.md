@@ -1,3 +1,12 @@
+> **⚠️ Moved:** This action has migrated to **[linuxfoundation/slack-release-notifier](https://github.com/linuxfoundation/slack-release-notifier)**. This repository is archived and will no longer receive updates.
+>
+> ### How to Migrate
+> Update your workflow YAML file:
+> ```diff
+> - uses: jmertic/slack-release-notifier@742b241f04f0711d1bec63e69de84e82ddb2d21e # 20261117
+> + uses: linuxfoundation/slack-release-notifier@4dcaff18c5356db866557089a4b234c1d7e49c55 # 20261117
+> ```
+
 # Slack Release Notifier
 
 [![License](https://img.shields.io/github/license/jmertic/slack-release-notifier)](LICENSE)
