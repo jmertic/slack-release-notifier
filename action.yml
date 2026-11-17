@@ -35,6 +35,11 @@ inputs:
 runs:
   using: 'composite'
   steps:
+    - name: Deprecation Notice
+      shell: bash
+      run: |
+        echo "::warning title=Action Moved::jmertic/slack-release-notifier has moved to linuxfoundation/slack-release-notifier and is no longer maintained. Please update your workflow to use linuxfoundation/slack-release-notifier."
+
     - name: Install poetry
       uses: abatilo/actions-poetry@3765cf608f2d4a72178a9fc5b918668e542b89b1 # v4.0.0
 
